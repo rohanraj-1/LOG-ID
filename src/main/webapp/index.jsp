@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1>Welcome to Simple Servlet WebApp</h1>
-<form action="hello" method="get">
-<label for="name">Enter your name:</label>
+<form action="kay kay aana " method="get">
+<label for="name">sale kutte harami pille:</label>
 <input id="name" name="name" />
 <button type="submit">Say Hello</button>
 </form>
