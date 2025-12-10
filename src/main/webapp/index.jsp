@@ -1,37 +1,29 @@
 import java.util.Scanner;
 
-public class FormSubmission {
+public class ConsoleLogin {
+
+    private static final String VALID_USERNAME = "user";
+    private static final String VALID_PASSWORD = "password";
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Form Submission System");
+        System.out.println("Enter username:");
+        String username = scanner.nextLine();
 
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        System.out.println("Enter password:");
+        String password = scanner.nextLine();
 
-        System.out.print("Enter your class: ");
-        String className = scanner.nextLine();
+        if (authenticate(username, password)) {
+            System.out.println("Login Successful! Welcome, " + username + "!");
+        } else {
+            System.out.println("Invalid username or password.");
+        }
 
-        System.out.print("Enter your college name: ");
-        String collegeName = scanner.nextLine();
-
-        System.out.print("Enter your age: ");
-        int age = scanner.nextInt();
-
-        scanner.nextLine(); // Consume newline character left by nextInt()
-
-        System.out.print("Enter your education: ");
-        String education = scanner.nextLine();
-
-        System.out.println("\nThank you! Here's the information you provided:");
-        System.out.println("Name: " + name);
-        System.out.println("Class: " + className);
-        System.out.println("College Name: " + collegeName);
-        System.out.println("Age: " + age);
-        System.out.println("Education: " + education);
-
-        // Close the scanner
         scanner.close();
     }
-}
 
+    private static boolean authenticate(String username, String password) {
+        return username.equals(VALID_USERNAME) && password.equals(VALID_PASSWORD);
+    }
+}
